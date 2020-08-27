@@ -20,21 +20,21 @@ import javax.persistence.Id;
 public class Evento implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private String id;
+    private Long id;
     @Column
     private String nome;
     @Column
     private String local;
     @Column
     private String data;
-    @Column
+   @Column
     private String horario;
 
     public Evento(){
     
     }
 
-    public Evento(String id, String nome, String local, String data, String horario) {
+    public Evento(Long id, String nome, String local, String data, String horario) {
         this.id = id;
         this.nome = nome;
         this.local = local;
@@ -47,13 +47,15 @@ public class Evento implements Serializable{
         return nome;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
+    
+    
     
     
     public void setNome(String nome) {
